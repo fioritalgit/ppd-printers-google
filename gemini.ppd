@@ -1,16 +1,16 @@
 *PPD-Adobe: "4.3"
-*%%%% PPD File for Zebra ZD420 (PDF Direct Mode)
-*%%%% Size: 80mm x 100mm
+*%%%% PPD File for Zebra ZD420 - 80x100mm (NO STATUS CHECK)
+*%%%% Modified to fix "Not Connected" error on ChromeOS
 *FormatVersion: "4.3"
-*FileVersion: "3.0"
+*FileVersion: "2.0"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
-*PCFileName: "ZebraPDF.ppd"
+*PCFileName: "ZD420_80x100_v2.ppd"
 *Product: "(Zebra ZD420)"
 *Manufacturer: "Zebra"
-*ModelName: "Zebra PDF Direct 80x100"
-*ShortNickName: "Zebra PDF 80x100"
-*NickName: "Zebra PDF Direct Mode"
+*ModelName: "Zebra ZD420 Custom"
+*ShortNickName: "Zebra ZD420"
+*NickName: "Zebra ZD420 8x10cm"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: False
@@ -19,27 +19,36 @@
 *Throughput: "1"
 *LandscapeOrientation: Plus90
 
-*% Dichiarazione esplicita: Questa stampante vuole PDF
-*cupsFilter: "application/pdf 0 -"
-
 *OpenGroup: General/General
 
 *OpenUI *PageSize/Media Size: PickOne
 *OrderDependency: 10 AnySetup *PageSize
 *DefaultPageSize: Label80x100
-*PageSize Label80x100/Etichetta 80x100mm: "<</PageSize[227 283]/ImagingBBox null>>setpagedevice"
+*PageSize Label80x100/Etichetta 8x10cm: "<</PageSize[227 283]/ImagingBBox null>>setpagedevice"
 *CloseUI: *PageSize
 
 *OpenUI *PageRegion/Media Size: PickOne
 *OrderDependency: 10 AnySetup *PageRegion
 *DefaultPageRegion: Label80x100
-*PageRegion Label80x100/Etichetta 80x100mm: "<</PageSize[227 283]/ImagingBBox null>>setpagedevice"
+*PageRegion Label80x100/Etichetta 8x10cm: "<</PageSize[227 283]/ImagingBBox null>>setpagedevice"
 *CloseUI: *PageRegion
 
 *DefaultImageableArea: Label80x100
-*ImageableArea Label80x100/Etichetta 80x100mm: "0 0 227 283"
+*ImageableArea Label80x100/Etichetta 8x10cm: "0 0 227 283"
 
 *DefaultPaperDimension: Label80x100
-*PaperDimension Label80x100/Etichetta 80x100mm: "227 283"
+*PaperDimension Label80x100/Etichetta 8x10cm: "227 283"
 
 *CloseGroup: General
+
+*OpenUI *Resolution/Resolution: PickOne
+*OrderDependency: 20 AnySetup *Resolution
+*DefaultResolution: 203dpi
+*Resolution 203dpi/203dpi: ""
+*CloseUI: *Resolution
+
+*OpenUI *Darkness/Darkness: PickOne
+*OrderDependency: 20 AnySetup *Darkness
+*DefaultDarkness: 15
+*Darkness 15/15: ""
+*CloseUI: *Darkness
